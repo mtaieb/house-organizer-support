@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Organizer - Support & Help Center</title>
+    <meta name="description" content="Get help with House Organizer app. Find answers to common questions, learn how to use features, and contact support.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .app-badge {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .app-badge:hover {
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .question {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .answer {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 10px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .legal-links {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .legal-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+        
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .action-btn {
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+        
+        .action-btn.secondary {
+            background: #6c757d;
+        }
+        
+        .action-btn.secondary:hover {
+            background: #5a6268;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 House Organizer</h1>
+            <p>Support & Help Center</p>
+            <a href="#" class="app-badge">📱 Download on App Store</a>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>🚀 Quick Start Guide</h2>
+                <div class="quick-actions">
+                    <a href="#getting-started" class="action-btn">Getting Started</a>
+                    <a href="#voice-commands" class="action-btn">Voice Commands</a>
+                    <a href="#troubleshooting" class="action-btn secondary">Troubleshooting</a>
+                    <a href="faq.html" class="action-btn secondary">Full FAQ</a>
+                </div>
+            </div>
+
+            <div class="section" id="getting-started">
+                <h2>📱 Getting Started</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="question">How do I add my first product?</div>
+                        <div class="answer">Tap the "+" button on the main screen, enter product details (name, brand, quantity), set an expiration date, and select a list (Fridge, Pantry, etc.).</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">How do I create custom lists?</div>
+                        <div class="answer">During onboarding, you can select up to 3 lists from our suggestions. You can also create custom lists by going to Settings → Manage Lists.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">How do I set up expiration reminders?</div>
+                        <div class="answer">Go to Settings → Notifications and enable notifications. The app will automatically remind you when products are about to expire.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Can I track different types of products?</div>
+                        <div class="answer">Yes! House Organizer supports food, drinks, cleaning supplies, clothing, wine bottles, and more. Each type has specific fields for better organization.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="voice-commands">
+                <h2>🎤 Voice Commands & Siri Integration</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="question">How do I use Siri with the app?</div>
+                        <div class="answer">Say "Hey Siri, add [product name] to my [list name] list" or "Hey Siri, check expiring products". The app supports natural language commands.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">What voice commands are available?</div>
+                        <div class="answer">• "Add [product] to my [list] list"<br>• "Check expiring products"<br>• "How many products are in my [list]?"<br>• "Open my product tracker"</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Can I set expiration dates with voice?</div>
+                        <div class="answer">Yes! Say "Add milk to my fridge list, expires tomorrow" and the app will automatically set the expiration date.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📸 AI Image Recognition</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="question">How does photo recognition work?</div>
+                        <div class="answer">Take a photo of a product, and our AI will automatically identify it and suggest details like name, brand, and expiration date. This feature is optional and requires your permission.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Is my photo data private?</div>
+                        <div class="answer">Yes! Photos are only sent to our AI service for analysis and are not stored. The analysis happens in real-time and your photos remain private.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">What if the AI doesn't recognize my product?</div>
+                        <div class="answer">You can still manually enter all the product details. The AI is just a helpful suggestion tool to speed up data entry.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>✨ Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">📦</div>
+                        <h3>Multiple Product Types</h3>
+                        <p>Track food, drinks, cleaning supplies, clothing, and wine with specialized fields for each type.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📅</div>
+                        <h3>Smart Expiration Tracking</h3>
+                        <p>Never waste food again with intelligent expiration date monitoring and notifications.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎤</div>
+                        <h3>Voice Commands</h3>
+                        <p>Use Siri to add products, check expiring items, and manage your lists hands-free.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📸</div>
+                        <h3>AI Recognition</h3>
+                        <p>Take photos of products for automatic identification and data entry.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">☁️</div>
+                        <h3>iCloud Sync</h3>
+                        <p>Sync your data across all your Apple devices with optional iCloud integration.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌙</div>
+                        <h3>Dark Mode</h3>
+                        <p>Beautiful dark mode support that adapts to your system preferences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="troubleshooting">
+                <h2>🔧 Troubleshooting</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="question">The app crashes when I open it</div>
+                        <div class="answer">Try force-closing the app and reopening it. If the problem persists, restart your device. If issues continue, contact support.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Notifications aren't working</div>
+                        <div class="answer">Check that notifications are enabled in Settings → Notifications, and that the app has permission in iOS Settings → Notifications → House Organizer.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">iCloud sync isn't working</div>
+                        <div class="answer">Ensure you're signed into iCloud and have sufficient storage. Check Settings → iCloud → iCloud Drive is enabled.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Voice commands don't work</div>
+                        <div class="answer">Make sure Siri is enabled in iOS Settings → Siri & Search. Try saying "Hey Siri" first to test if Siri is working.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">App is slow or laggy</div>
+                        <div class="answer">Try closing other apps to free up memory. If you have many products, consider organizing them into more specific lists.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Data disappeared</div>
+                        <div class="answer">Check if iCloud sync is enabled and you're signed into the same iCloud account. Your data should sync automatically across devices.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>☁️ Data & Privacy</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="question">Is my data private and secure?</div>
+                        <div class="answer">Yes! All your data is stored locally on your device. We don't collect personal information or share your data with third parties. iCloud sync is optional and user-controlled.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">How do I enable iCloud sync?</div>
+                        <div class="answer">Go to Settings → iCloud Sync and toggle it on. This will sync your data across all your Apple devices using your personal iCloud account.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Can I export my data?</div>
+                        <div class="answer">Yes! Go to Settings → Data Management → Export Data to create a backup of all your product information.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">How do I delete all my data?</div>
+                        <div class="answer">Go to Settings → Data Management → Clear All Data. This will permanently delete all your products and lists. This action cannot be undone.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h2>📧 Need More Help?</h2>
+            <p>Can't find what you're looking for? We're here to help!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 Email Support</h3>
+                    <p><a href="mailto:support@houseorganizer.app">support@houseorganizer.app</a></p>
+                    <p>Response within 24 hours</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📱 App Store</h3>
+                    <p><a href="#">Rate & Review</a></p>
+                    <p>Help us improve the app</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🐛 Bug Reports</h3>
+                    <p><a href="mailto:bugs@houseorganizer.app">bugs@houseorganizer.app</a></p>
+                    <p>Report issues directly</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="legal-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="faq.html">Full FAQ</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation to FAQ items on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
